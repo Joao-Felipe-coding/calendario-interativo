@@ -1,0 +1,16 @@
+*{
+  font-family: sans-serif;
+}
+
+.calendar, th, td {
+  border: solid 1px black;
+  border-collapse: collapse;
+  text-align: center;
+  width: 350px;
+  height: 30px;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
