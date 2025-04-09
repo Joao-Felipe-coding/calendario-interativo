@@ -25,8 +25,7 @@ function colorirDia() {
   //Declara e inicializa contadores
   let contadorAzul = 0, contadorVerde = 0, contadorRosa = 0, contadorRoxo = 0;
 
-  //Loop para verificar o estilo de cada célula e contar quantas tem cor e qual cor
-
+  //Loop para verificar o estilo de cada célula e contar quantas têm cor e qual cor
   for (let i = 0; i < elementos.length; i++) {
     //obtém o estilo computado do elemento atual
     var estilo = window.getComputedStyle(elementos[i]);
@@ -35,14 +34,23 @@ function colorirDia() {
     var corEstilo = estilo.backgroundColor;
 
     //Verifica a cor e incrementa o contador correspondente
-    if ((corEstilo === 'rgb(173, 216, 230') || (corEstilo === 'lightblue')) { // azul
+    if (corEstilo === 'rgb(173, 216, 230)') { // azul
       contadorAzul++;
-    } else if (corEstilo === 'rgb(152, 215, 152)' || (corEstilo === 'palegreen')) { // verde
+    } else if (corEstilo === 'rgb(152, 251, 152)') { // verde
       contadorVerde++;
-    } else if (corEstilo === 'rgb(255, 192, 203)' || (corEstilo === 'lightpink')) { // rosa
+    } else if (corEstilo === 'rgb(255, 182, 193)') { // rosa
       contadorRosa++;
-    } else if (corEstilo === 'rgb(255, 182, 193)' || (corEstilo === 'slateblue')) { // roxo
+    } else if (corEstilo === 'rgb(106, 90, 205)') { // roxo
       contadorRoxo++;
     }
   }
+
+  // Atualiza a lista de cores usadas no HTML
+  let listaCores = document.getElementById('lista-cores');
+  listaCores.innerHTML = `
+    <li>Azul: ${contadorAzul}</li>
+    <li>Verde: ${contadorVerde}</li>
+    <li>Rosa: ${contadorRosa}</li>
+    <li>Roxo: ${contadorRoxo}</li>
+  `;
 }
